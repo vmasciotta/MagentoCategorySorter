@@ -34,7 +34,7 @@ class Vmasciotta_MagentoCategorySorter_Model_Observer
     public function sortCategories(Varien_Event_Observer $observer)
     {
         //set the initial parameters for the function
-        $root = 1;
+        $root = $observer->getCategory()->getId();
         $conn = Mage::getSingleton('core/resource')->getConnection('core_write');
         $this->orderCategories($root, $conn);
     }
