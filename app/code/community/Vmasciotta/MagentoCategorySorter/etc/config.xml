@@ -1,0 +1,29 @@
+<?xml versione="1.0" ?>
+
+<config>
+    <modules>
+        <Vmasciotta_MagentoCategorySorter>
+            <version>1.0.0</version>
+        </Vmasciotta_MagentoCategorySorter>
+    </modules>
+
+    <global>
+        <models>
+            <vmasciotta_magentocategorysorter>
+                <class>Vmasciotta_MagentoCategorySorter_Model</class>
+            </vmasciotta_magentocategorysorter>
+        </models>
+
+        <events>
+            <catalog_category_save_after>
+                <observers>
+                    <vmasciotta_magentocategorysorter>
+                        <type>singleton</type>
+                        <class>Vmasciotta_MagentoCategorySorter_Model_Observer</class>
+                        <method>sortCategories</method>
+                    </vmasciotta_magentocategorysorter>
+                </observers>
+            </catalog_category_save_after>
+        </events>
+    </global>
+</config>
