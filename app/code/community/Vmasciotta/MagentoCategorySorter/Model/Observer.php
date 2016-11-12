@@ -23,7 +23,7 @@ class Vmasciotta_MagentoCategorySorter_Model_Observer
         $position = 1;
 
         foreach ($categories as $name=>$id) {
-            $q = "UPDATE {$table} SET 'position' = {$position} where 'entity_id' = {$id}";
+            $q = "UPDATE {$table} SET position = {$position} WHERE entity_id = {$id}";
             $conn->query($q);
             $position++;
             //sort the current category children by calling the same function recursively
